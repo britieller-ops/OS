@@ -27,6 +27,29 @@ function MainContent() {
   const [isLoginPage, setIsLoginPage] = useState(false);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
+    try {
+      const saved = localStorage.getItem('osmaster_dark_mode');
+      return saved !== null ? saved === 'true' : true;
+    } catch {
+      return true;
+    }
+  });
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('osmaster_dark_mode', String(isDarkMode));
+      if (isDarkMode) {
+        document.documentElement.classList.add('dark');
+        document.body.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+        document.body.classList.remove('dark');
+      }
+    } catch {
+      // ignore
+    }
+  }, [isDarkMode]);
 
   // Main State
   const [metrics, setMetrics] = useState<DashboardMetrics | null>(null);
@@ -197,7 +220,7 @@ function MainContent() {
   }
 
   return (
-    <div className="min-h-screen bg-[#f8fafc] text-slate-900 flex flex-col antialiased">
+    <div className={`min-h-screen ${isDarkMode ? 'bg-[#0b0f19] text-slate-100' : 'bg-[#f8fafc] text-slate-900'} flex flex-col antialiased transition-colors duration-200`}>
       {/* Top Navbar */}
       <Navbar
         activeTab={activeTab}
@@ -206,6 +229,8 @@ function MainContent() {
         onRefresh={loadData}
         estoqueBaixoCount={metrics?.estoqueBaixo || 3}
         onOpenLoginPage={() => setIsLoginPage(true)}
+        isDarkMode={isDarkMode}
+        onToggleTheme={() => setIsDarkMode(prev => !prev)}
       />
 
       {/* Main Content Area */}

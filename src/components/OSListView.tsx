@@ -57,23 +57,23 @@ export const OSListView: React.FC<OSListViewProps> = ({
   const getStatusBadge = (status: StatusOS) => {
     switch (status) {
       case 'ORCAMENTO':
-        return <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-slate-100 text-slate-700">Orçamento</span>;
+        return <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-slate-800 text-slate-300 border border-slate-700">Orçamento</span>;
       case 'APROVADA':
-        return <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-100 text-blue-700">Aprovada</span>;
+        return <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-500/20 text-blue-300 border border-blue-500/30">Aprovada</span>;
       case 'EM_ANALISE':
-        return <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-purple-100 text-purple-700">Em Análise</span>;
+        return <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30">Em Análise</span>;
       case 'EM_ANDAMENTO':
-        return <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-100 text-amber-700">Em Andamento</span>;
+        return <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-500/20 text-amber-300 border border-amber-500/30">Em Andamento</span>;
       case 'AGUARDANDO_PECAS':
-        return <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-orange-100 text-orange-700">Aguardando Peças</span>;
+        return <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-orange-500/20 text-orange-300 border border-orange-500/30">Aguardando Peças</span>;
       case 'FINALIZADA':
-        return <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-700">Finalizada</span>;
+        return <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">Finalizada</span>;
       case 'ENTREGUE':
-        return <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-teal-100 text-teal-800">Entregue</span>;
+        return <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-teal-500/20 text-teal-300 border border-teal-500/30">Entregue</span>;
       case 'CANCELADA':
-        return <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-100 text-rose-700">Cancelada</span>;
+        return <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-rose-500/20 text-rose-300 border border-rose-500/30">Cancelada</span>;
       default:
-        return <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-slate-100 text-slate-700">{status}</span>;
+        return <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-slate-800 text-slate-300 border border-slate-700">{status}</span>;
     }
   };
 
@@ -129,14 +129,14 @@ export const OSListView: React.FC<OSListViewProps> = ({
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-extrabold text-slate-900 tracking-tight">Ordens de Serviço</h1>
-          <p className="text-sm text-slate-500">
+          <h1 className="text-2xl font-extrabold text-white tracking-tight">Ordens de Serviço</h1>
+          <p className="text-sm text-slate-400">
             Gerenciamento geral, orçamentos, laudos técnicos e faturamento de ordens.
           </p>
         </div>
         <button
           onClick={onNewOS}
-          className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold px-4 py-2.5 rounded-xl shadow-sm transition-all"
+          className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold px-4 py-2.5 rounded-xl shadow-md shadow-indigo-600/30 transition-all cursor-pointer"
         >
           <Plus className="w-4 h-4" />
           <span>Criar Nova Ordem de Serviço</span>
@@ -144,7 +144,7 @@ export const OSListView: React.FC<OSListViewProps> = ({
       </div>
 
       {/* Filter and Search Bar */}
-      <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+      <div className="bg-[#0f172a] p-4 rounded-2xl border border-slate-800 shadow-md space-y-3 text-white">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
           {/* Quick tab filter */}
           <div className="flex items-center gap-1 overflow-x-auto pb-1 md:pb-0">
@@ -158,10 +158,10 @@ export const OSListView: React.FC<OSListViewProps> = ({
               <button
                 key={tab.id}
                 onClick={() => setStatusFilter(tab.id)}
-                className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-colors ${
+                className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-colors cursor-pointer ${
                   statusFilter === tab.id
                     ? 'bg-indigo-600 text-white shadow-sm'
-                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                    : 'bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white'
                 }`}
               >
                 {tab.label}
@@ -177,19 +177,19 @@ export const OSListView: React.FC<OSListViewProps> = ({
               placeholder="Filtrar nesta lista..."
               value={searchQuery}
               onChange={(e) => onSearchChange(e.target.value)}
-              className="w-full pl-9 pr-3 py-1.5 text-xs bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-1 focus:ring-indigo-500"
+              className="w-full pl-9 pr-3 py-1.5 text-xs bg-slate-800 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:bg-slate-750 focus:outline-none focus:ring-1 focus:ring-indigo-500"
             />
           </div>
         </div>
 
         {/* Secondary filters row */}
-        <div className="flex flex-wrap items-center gap-3 pt-2 border-t border-slate-100 text-xs">
+        <div className="flex flex-wrap items-center gap-3 pt-2 border-t border-slate-800 text-xs">
           <div className="flex items-center gap-2">
-            <span className="text-slate-500 font-medium">Prioridade:</span>
+            <span className="text-slate-400 font-medium">Prioridade:</span>
             <select
               value={prioridadeFilter}
               onChange={(e) => setPrioridadeFilter(e.target.value)}
-              className="px-2.5 py-1 rounded-lg border border-slate-200 bg-white text-slate-700 focus:outline-none"
+              className="px-2.5 py-1 rounded-lg border border-slate-700 bg-slate-800 text-slate-200 focus:outline-none"
             >
               <option value="TODOS">Todas</option>
               <option value="URGENTE">Urgente</option>
@@ -200,11 +200,11 @@ export const OSListView: React.FC<OSListViewProps> = ({
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="text-slate-500 font-medium">Técnico:</span>
+            <span className="text-slate-400 font-medium">Técnico:</span>
             <select
               value={tecnicoFilter}
               onChange={(e) => setTecnicoFilter(e.target.value)}
-              className="px-2.5 py-1 rounded-lg border border-slate-200 bg-white text-slate-700 focus:outline-none"
+              className="px-2.5 py-1 rounded-lg border border-slate-700 bg-slate-800 text-slate-200 focus:outline-none"
             >
               <option value="TODOS">Todos os Técnicos</option>
               {tecnicos.map((t) => (
@@ -222,10 +222,10 @@ export const OSListView: React.FC<OSListViewProps> = ({
       </div>
 
       {/* OS Table */}
-      <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+      <div className="bg-[#0f172a] rounded-2xl border border-slate-800 shadow-md overflow-hidden text-white">
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-sm text-slate-600">
-            <thead className="bg-slate-50 text-[11px] uppercase font-bold text-slate-500 border-b border-slate-200">
+          <table className="w-full text-left text-sm text-slate-300">
+            <thead className="bg-[#0d1424] text-[11px] uppercase font-bold text-slate-400 border-b border-slate-800">
               <tr>
                 <th className="py-3 px-4">Nº OS</th>
                 <th className="py-3 px-4">Cliente</th>
@@ -238,7 +238,7 @@ export const OSListView: React.FC<OSListViewProps> = ({
                 <th className="py-3 px-4 text-center">Ações</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100">
+            <tbody className="divide-y divide-slate-800">
               {filteredOrdens.length === 0 ? (
                 <tr>
                   <td colSpan={9} className="py-12 text-center text-slate-400 text-sm">
@@ -249,16 +249,16 @@ export const OSListView: React.FC<OSListViewProps> = ({
                 filteredOrdens.map((os) => (
                   <tr
                     key={os.id}
-                    className="hover:bg-slate-50/80 transition-colors group cursor-pointer"
+                    className="hover:bg-slate-850/80 transition-colors group cursor-pointer text-slate-200"
                     onClick={() => onSelectOS(os)}
                   >
                     {/* OS Number */}
-                    <td className="py-3.5 px-4 font-mono font-bold text-indigo-600 text-xs">
+                    <td className="py-3.5 px-4 font-mono font-bold text-indigo-400 text-xs">
                       {os.numeroOS}
                     </td>
 
                     {/* Client */}
-                    <td className="py-3.5 px-4 font-medium text-slate-900">
+                    <td className="py-3.5 px-4 font-medium text-white">
                       <div>{os.cliente?.nome || 'Cliente avulso'}</div>
                       <span className="text-[11px] text-slate-400 font-normal">
                         {os.cliente?.telefone || os.cliente?.cpfCnpj || '-'}
@@ -267,10 +267,10 @@ export const OSListView: React.FC<OSListViewProps> = ({
 
                     {/* Equipment & Defect */}
                     <td className="py-3.5 px-4">
-                      <div className="font-semibold text-slate-800 text-xs">
+                      <div className="font-semibold text-slate-200 text-xs">
                         {os.equipamento.tipo} - {os.equipamento.marca} {os.equipamento.modelo}
                       </div>
-                      <div className="text-[11px] text-slate-500 truncate max-w-xs">
+                      <div className="text-[11px] text-slate-400 truncate max-w-xs">
                         {os.defeitoRelatado}
                       </div>
                     </td>
@@ -283,15 +283,15 @@ export const OSListView: React.FC<OSListViewProps> = ({
                             className="w-2.5 h-2.5 rounded-full shrink-0"
                             style={{ backgroundColor: os.tecnico.corIdentificacao }}
                           ></span>
-                          <span className="text-slate-800 font-medium">{os.tecnico.nome}</span>
+                          <span className="text-slate-300 font-medium">{os.tecnico.nome}</span>
                         </div>
                       ) : (
-                        <span className="text-slate-400 italic">Não atribuído</span>
+                        <span className="text-slate-500 italic">Não atribuído</span>
                       )}
                     </td>
 
                     {/* Opening Date */}
-                    <td className="py-3.5 px-4 text-xs text-slate-500 font-mono">
+                    <td className="py-3.5 px-4 text-xs text-slate-400 font-mono">
                       {formatDate(os.dataAbertura)}
                     </td>
 
@@ -305,10 +305,10 @@ export const OSListView: React.FC<OSListViewProps> = ({
                       <span
                         className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
                           os.prioridade === 'URGENTE'
-                            ? 'bg-rose-100 text-rose-700'
+                            ? 'bg-rose-500/20 text-rose-300 border border-rose-500/30'
                             : os.prioridade === 'ALTA'
-                            ? 'bg-amber-100 text-amber-700'
-                            : 'bg-slate-100 text-slate-600'
+                            ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
+                            : 'bg-slate-800 text-slate-300 border border-slate-700'
                         }`}
                       >
                         {os.prioridade}
@@ -316,7 +316,7 @@ export const OSListView: React.FC<OSListViewProps> = ({
                     </td>
 
                     {/* Total Value */}
-                    <td className="py-3.5 px-4 font-bold text-slate-900 text-xs">
+                    <td className="py-3.5 px-4 font-bold text-white text-xs">
                       {formatCurrency(os.valorTotal)}
                     </td>
 
@@ -326,7 +326,7 @@ export const OSListView: React.FC<OSListViewProps> = ({
                         <button
                           onClick={() => onSelectOS(os)}
                           title="Ver / Editar Detalhes"
-                          className="p-1.5 rounded-lg text-slate-500 hover:text-indigo-600 hover:bg-indigo-50 transition-colors"
+                          className="p-1.5 rounded-lg text-slate-400 hover:text-indigo-400 hover:bg-slate-800 transition-colors"
                         >
                           <Edit3 className="w-4 h-4" />
                         </button>

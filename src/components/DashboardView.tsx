@@ -163,19 +163,22 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       {/* ============================================================== */}
       {/* CADASTROS RÁPIDOS (CLIENTES, PRODUTOS, TÉCNICOS/FUNCIONÁRIOS) */}
       {/* ============================================================== */}
-      <div className="bg-white p-4 sm:p-5 rounded-3xl border border-slate-200/80 shadow-xs flex flex-wrap items-center justify-between gap-4">
+      {/* ============================================================== */}
+      {/* CADASTROS RÁPIDOS (CLIENTES, PRODUTOS, TÉCNICOS/FUNCIONÁRIOS) */}
+      {/* ============================================================== */}
+      <div className="bg-[#0f172a] p-4 sm:p-5 rounded-3xl border border-slate-800 shadow-md flex flex-wrap items-center justify-between gap-4 text-white">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold shrink-0">
+          <div className="w-10 h-10 rounded-2xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold shrink-0 border border-indigo-500/30">
             <FolderPlus className="w-5 h-5" />
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <h2 className="text-sm font-black text-slate-900">Módulo de Cadastros</h2>
-              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600">
+              <h2 className="text-sm font-black text-white">Módulo de Cadastros</h2>
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700">
                 Acesso Rápido
               </span>
             </div>
-            <p className="text-xs text-slate-500 mt-0.5">
+            <p className="text-xs text-slate-400 mt-0.5">
               Cadastre e consulte clientes, catálogo de produtos/peças e técnicos/funcionários da oficina.
             </p>
           </div>
@@ -184,28 +187,28 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         <div className="flex items-center gap-2.5 flex-wrap">
           <button
             onClick={onNavigateToClientes}
-            className="flex items-center gap-2 px-3.5 py-2 rounded-xl border border-slate-200 bg-white hover:bg-indigo-50/50 hover:border-indigo-300 text-slate-700 hover:text-indigo-700 text-xs font-bold transition-all shadow-2xs cursor-pointer active:scale-95"
+            className="flex items-center gap-2 px-3.5 py-2 rounded-xl border border-slate-700 bg-slate-800/90 hover:bg-slate-700 text-slate-200 hover:text-white text-xs font-bold transition-all shadow-2xs cursor-pointer active:scale-95"
             title="Abrir Cadastro de Clientes"
           >
-            <Users className="w-4 h-4 text-indigo-600" />
+            <Users className="w-4 h-4 text-indigo-400" />
             <span>+ Cadastrar Cliente</span>
           </button>
 
           <button
             onClick={onNavigateToEstoque}
-            className="flex items-center gap-2 px-3.5 py-2 rounded-xl border border-slate-200 bg-white hover:bg-emerald-50/50 hover:border-emerald-300 text-slate-700 hover:text-emerald-700 text-xs font-bold transition-all shadow-2xs cursor-pointer active:scale-95"
+            className="flex items-center gap-2 px-3.5 py-2 rounded-xl border border-slate-700 bg-slate-800/90 hover:bg-slate-700 text-slate-200 hover:text-white text-xs font-bold transition-all shadow-2xs cursor-pointer active:scale-95"
             title="Abrir Cadastro de Produtos e Peças"
           >
-            <Package className="w-4 h-4 text-emerald-600" />
+            <Package className="w-4 h-4 text-emerald-400" />
             <span>+ Cadastrar Produto / Peça</span>
           </button>
 
           <button
             onClick={onNavigateToTecnicos}
-            className="flex items-center gap-2 px-3.5 py-2 rounded-xl border border-slate-200 bg-white hover:bg-blue-50/50 hover:border-blue-300 text-slate-700 hover:text-blue-700 text-xs font-bold transition-all shadow-2xs cursor-pointer active:scale-95"
+            className="flex items-center gap-2 px-3.5 py-2 rounded-xl border border-slate-700 bg-slate-800/90 hover:bg-slate-700 text-slate-200 hover:text-white text-xs font-bold transition-all shadow-2xs cursor-pointer active:scale-95"
             title="Abrir Cadastro de Técnicos e Funcionários"
           >
-            <UserCheck className="w-4 h-4 text-blue-600" />
+            <UserCheck className="w-4 h-4 text-blue-400" />
             <span>+ Cadastrar Técnico (Funcionário)</span>
           </button>
         </div>
@@ -219,24 +222,24 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         <div 
           onClick={onNavigateToOrdens}
           title="Clique para gerenciar todas as Ordens de Serviço"
-          className="bg-white p-5 rounded-3xl border border-slate-200/80 shadow-xs flex flex-col justify-between cursor-pointer hover:border-indigo-300 hover:shadow-md transition-all group"
+          className="bg-[#0f172a] p-5 rounded-3xl border border-slate-800 shadow-md flex flex-col justify-between cursor-pointer hover:border-indigo-500/50 hover:bg-[#131d33] transition-all group"
         >
           <div className="flex items-center justify-between mb-3">
-            <span className="text-xs font-bold text-slate-400 group-hover:text-indigo-600 transition-colors uppercase tracking-wider">
+            <span className="text-xs font-bold text-slate-400 group-hover:text-indigo-400 transition-colors uppercase tracking-wider">
               TOTAL DE ORDENS
             </span>
-            <div className="w-8 h-8 rounded-xl bg-slate-100 group-hover:bg-indigo-50 text-slate-600 group-hover:text-indigo-600 transition-colors flex items-center justify-center">
+            <div className="w-8 h-8 rounded-xl bg-slate-800 group-hover:bg-indigo-500/20 text-slate-300 group-hover:text-indigo-400 transition-colors flex items-center justify-center border border-slate-700/60">
               <FileText className="w-4 h-4" />
             </div>
           </div>
           <div>
             <div className="flex items-baseline gap-1.5">
-              <span className="text-3xl font-black text-slate-900 group-hover:text-indigo-600 transition-colors">
+              <span className="text-3xl font-black text-white group-hover:text-indigo-400 transition-colors">
                 {metrics?.totalOS ?? 7}
               </span>
-              <span className="text-xs font-bold text-slate-500">registros</span>
+              <span className="text-xs font-bold text-slate-400">registros</span>
             </div>
-            <p className="text-xs text-indigo-600 font-semibold mt-2">
+            <p className="text-xs text-indigo-400 font-semibold mt-2">
               {metrics?.concluidas ?? 3} concluídas ({metrics?.taxaSucesso ?? 42.9}%)
             </p>
           </div>
@@ -246,24 +249,24 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         <div 
           onClick={onNavigateToKanban}
           title="Clique para visualizar as ordens no Kanban"
-          className="bg-white p-5 rounded-3xl border border-slate-200/80 shadow-xs flex flex-col justify-between cursor-pointer hover:border-amber-300 hover:shadow-md transition-all group"
+          className="bg-[#0f172a] p-5 rounded-3xl border border-slate-800 shadow-md flex flex-col justify-between cursor-pointer hover:border-amber-500/50 hover:bg-[#131d33] transition-all group"
         >
           <div className="flex items-center justify-between mb-3">
-            <span className="text-xs font-bold text-slate-400 group-hover:text-amber-600 transition-colors uppercase tracking-wider">
+            <span className="text-xs font-bold text-slate-400 group-hover:text-amber-400 transition-colors uppercase tracking-wider">
               OS EM ABERTO
             </span>
-            <div className="w-8 h-8 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-xl bg-amber-500/20 text-amber-400 border border-amber-500/30 flex items-center justify-center">
               <Clock className="w-4 h-4" />
             </div>
           </div>
           <div>
             <div className="flex items-baseline gap-1.5">
-              <span className="text-3xl font-black text-amber-500">
+              <span className="text-3xl font-black text-amber-400">
                 {metrics?.abertas ?? 4}
               </span>
-              <span className="text-xs font-bold text-amber-600">em atendimento</span>
+              <span className="text-xs font-bold text-amber-400/80">em atendimento</span>
             </div>
-            <p className="text-xs text-slate-500 mt-2">
+            <p className="text-xs text-slate-400 mt-2">
               {metrics?.orcamentos ?? 1} orçamentos • {metrics?.executando ?? 2} executando
             </p>
           </div>
@@ -273,24 +276,24 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         <div 
           onClick={onNavigateToOrdens}
           title="Clique para ver os valores em carteira ativa"
-          className="bg-white p-5 rounded-3xl border border-slate-200/80 shadow-xs flex flex-col justify-between cursor-pointer hover:border-indigo-300 hover:shadow-md transition-all group"
+          className="bg-[#0f172a] p-5 rounded-3xl border border-slate-800 shadow-md flex flex-col justify-between cursor-pointer hover:border-indigo-500/50 hover:bg-[#131d33] transition-all group"
         >
           <div className="flex items-center justify-between mb-3">
-            <span className="text-xs font-bold text-slate-400 group-hover:text-indigo-600 transition-colors uppercase tracking-wider">
+            <span className="text-xs font-bold text-slate-400 group-hover:text-indigo-400 transition-colors uppercase tracking-wider">
               FATURAMENTO PREVISTO
             </span>
-            <div className="w-8 h-8 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-xl bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 flex items-center justify-center">
               <TrendingUp className="w-4 h-4" />
             </div>
           </div>
           <div>
             <div className="flex items-baseline gap-1">
               <span className="text-xs font-bold text-slate-400">R$</span>
-              <span className="text-3xl font-black text-slate-900 group-hover:text-indigo-600 transition-colors">
+              <span className="text-3xl font-black text-white group-hover:text-indigo-400 transition-colors">
                 {((metrics?.faturamentoPrevisto ?? 4365)).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
               </span>
             </div>
-            <p className="text-xs text-slate-500 mt-2">
+            <p className="text-xs text-slate-400 mt-2">
               Em carteira ativa
             </p>
           </div>
@@ -300,25 +303,25 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         <div 
           onClick={onNavigateToOrdens}
           title="Clique para visualizar ordens faturadas"
-          className="bg-white p-5 rounded-3xl border border-slate-200/80 shadow-xs flex flex-col justify-between cursor-pointer hover:border-emerald-300 hover:shadow-md transition-all group"
+          className="bg-[#0f172a] p-5 rounded-3xl border border-slate-800 shadow-md flex flex-col justify-between cursor-pointer hover:border-emerald-500/50 hover:bg-[#131d33] transition-all group"
         >
           <div className="flex items-center justify-between mb-3">
-            <span className="text-xs font-bold text-slate-400 group-hover:text-emerald-700 transition-colors uppercase tracking-wider">
+            <span className="text-xs font-bold text-slate-400 group-hover:text-emerald-400 transition-colors uppercase tracking-wider">
               TOTAL FATURADO HISTÓRICO
             </span>
-            <div className="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center">
               <DollarSign className="w-4 h-4" />
             </div>
           </div>
           <div>
             <div className="flex items-baseline gap-1">
-              <span className="text-xs font-bold text-emerald-600">R$</span>
-              <span className="text-3xl font-black text-emerald-600">
+              <span className="text-xs font-bold text-emerald-400">R$</span>
+              <span className="text-3xl font-black text-emerald-400">
                 {((metrics?.faturamentoTotal ?? 1890)).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
               </span>
             </div>
-            <p className="text-xs text-slate-600 font-medium mt-2 flex items-center gap-1">
-              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+            <p className="text-xs text-slate-400 font-medium mt-2 flex items-center gap-1">
+              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
               <span>{metrics?.concluidas ?? 3} ordens finalizadas</span>
             </p>
           </div>
@@ -480,22 +483,22 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
         
         {/* CARD ESQUERDA: SERVIÇO MAIS VENDIDO */}
-        <div className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-xs flex flex-col justify-between h-full">
+        <div className="bg-[#0f172a] rounded-3xl p-6 border border-slate-800 shadow-md flex flex-col justify-between h-full text-white">
           <div>
             {/* Header */}
             <div className="flex items-start justify-between gap-3 mb-5">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-2xl bg-amber-50 border border-amber-200/70 flex items-center justify-center text-amber-500 shadow-xs">
-                  <Trophy className="w-5 h-5 text-amber-500" />
+                <div className="w-10 h-10 rounded-2xl bg-amber-500/20 border border-amber-500/30 flex items-center justify-center text-amber-400 shadow-xs">
+                  <Trophy className="w-5 h-5 text-amber-400" />
                 </div>
                 <div>
-                  <h2 className="text-lg font-bold text-slate-900 tracking-tight">Serviço Mais Vendido</h2>
-                  <p className="text-xs text-slate-500">Principal demanda de mão de obra da assistência</p>
+                  <h2 className="text-lg font-bold text-white tracking-tight">Serviço Mais Vendido</h2>
+                  <p className="text-xs text-slate-400">Principal demanda de mão de obra da assistência</p>
                 </div>
               </div>
 
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-200/80 text-amber-700 text-xs font-bold shrink-0">
-                <Flame className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/20 border border-amber-500/30 text-amber-300 text-xs font-bold shrink-0">
+                <Flame className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
                 <span>Top #1 Serviço</span>
               </div>
             </div>
@@ -504,14 +507,14 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             <div 
               onClick={onNavigateToOrdens}
               title="Clique para visualizar ordens deste serviço"
-              className="bg-slate-50/80 hover:bg-slate-100/90 rounded-2xl p-4 sm:p-5 border border-slate-200/80 mb-5 relative transition-all cursor-pointer group"
+              className="bg-[#131d33] hover:bg-[#182542] rounded-2xl p-4 sm:p-5 border border-slate-750 mb-5 relative transition-all cursor-pointer group"
             >
               <div className="flex items-start justify-between gap-3">
                 <div>
-                  <span className="text-[11px] font-black uppercase tracking-wider text-indigo-600 block mb-1">
+                  <span className="text-[11px] font-black uppercase tracking-wider text-indigo-400 block mb-1">
                     SERVIÇO LÍDER EM ORDENS
                   </span>
-                  <h3 className="text-base sm:text-lg font-extrabold text-slate-900 group-hover:text-indigo-600 transition-colors leading-snug">
+                  <h3 className="text-base sm:text-lg font-extrabold text-white group-hover:text-indigo-400 transition-colors leading-snug">
                     {metrics?.servicoLider?.nome || 'Limpeza interna completa e repastagem térmica'}
                   </h3>
                 </div>
@@ -523,35 +526,35 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
 
               {/* 3 Metric cards inside */}
               <div className="grid grid-cols-3 gap-2.5 sm:gap-3 mt-4">
-                <div className="bg-white rounded-xl p-3 border border-slate-200/80 shadow-xs">
+                <div className="bg-[#0f172a] rounded-xl p-3 border border-slate-800 shadow-xs">
                   <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
                     EXECUÇÕES
                   </span>
                   <div className="mt-1 flex items-baseline gap-1">
-                    <span className="text-lg sm:text-xl font-black text-slate-900">
+                    <span className="text-lg sm:text-xl font-black text-white">
                       {metrics?.servicoLider?.execucoes ?? 3}
                     </span>
                     <span className="text-xs font-bold text-slate-400">OS</span>
                   </div>
                 </div>
 
-                <div className="bg-white rounded-xl p-3 border border-slate-200/80 shadow-xs">
+                <div className="bg-[#0f172a] rounded-xl p-3 border border-slate-800 shadow-xs">
                   <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
                     RECEITA TOTAL
                   </span>
                   <div className="mt-1">
-                    <span className="text-lg sm:text-xl font-black text-emerald-600">
+                    <span className="text-lg sm:text-xl font-black text-emerald-400">
                       {formatCurrency(metrics?.servicoLider?.receitaTotal ?? 620)}
                     </span>
                   </div>
                 </div>
 
-                <div className="bg-white rounded-xl p-3 border border-slate-200/80 shadow-xs">
+                <div className="bg-[#0f172a] rounded-xl p-3 border border-slate-800 shadow-xs">
                   <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
                     PREÇO MÉDIO
                   </span>
                   <div className="mt-1">
-                    <span className="text-lg sm:text-xl font-black text-indigo-600">
+                    <span className="text-lg sm:text-xl font-black text-indigo-400">
                       {formatCurrency(metrics?.servicoLider?.precoMedio ?? 207)}
                     </span>
                   </div>
@@ -573,22 +576,22 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                     key={servico.pos} 
                     onClick={onNavigateToOrdens}
                     title={`Filtrar ordens de: ${servico.nome}`}
-                    className="space-y-1.5 cursor-pointer hover:bg-slate-50 p-1 rounded-xl transition-all"
+                    className="space-y-1.5 cursor-pointer hover:bg-slate-800/60 p-1.5 rounded-xl transition-all"
                   >
-                    <div className="flex items-center justify-between text-xs font-semibold text-slate-800">
+                    <div className="flex items-center justify-between text-xs font-semibold text-slate-200">
                       <div className="flex items-center gap-2">
-                        <span className="w-5 h-5 rounded-full bg-slate-100 text-slate-700 font-extrabold text-[11px] flex items-center justify-center shrink-0">
+                        <span className="w-5 h-5 rounded-full bg-slate-800 text-indigo-300 border border-slate-700 font-extrabold text-[11px] flex items-center justify-center shrink-0">
                           {servico.pos}
                         </span>
-                        <span className="truncate max-w-[280px] sm:max-w-[340px]">{servico.nome}</span>
+                        <span className="truncate max-w-[280px] sm:max-w-[340px] text-slate-200">{servico.nome}</span>
                       </div>
-                      <div className="font-bold text-slate-900 shrink-0">
+                      <div className="font-bold text-white shrink-0">
                         {servico.execucoes} OS <span className="text-slate-400 font-normal">({formatCurrency(servico.receita)})</span>
                       </div>
                     </div>
-                    <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+                    <div className="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
                       <div 
-                        className="h-full bg-indigo-600 rounded-full transition-all duration-500" 
+                        className="h-full bg-indigo-500 rounded-full transition-all duration-500" 
                         style={{ width: `${widthPercent}%` }}
                       ></div>
                     </div>
@@ -599,13 +602,13 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           </div>
 
           {/* Footer Card */}
-          <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs">
-            <span className="text-slate-500 font-medium">
+          <div className="pt-4 border-t border-slate-800 flex items-center justify-between text-xs">
+            <span className="text-slate-400 font-medium">
               Volume acumulado de serviços: {metrics?.volumeAcumuladoServicos ?? 12}
             </span>
             <button
               onClick={onNavigateToOrdens}
-              className="text-indigo-600 hover:text-indigo-800 font-bold flex items-center gap-1 transition-colors cursor-pointer"
+              className="text-indigo-400 hover:text-indigo-300 font-bold flex items-center gap-1 transition-colors cursor-pointer"
             >
               <span>Ver em Ordens</span>
               <ExternalLink className="w-3.5 h-3.5" />
@@ -614,28 +617,28 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         </div>
 
         {/* CARD DIREITA: GRÁFICO DE PRODUTOS MAIS VENDIDOS */}
-        <div className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-xs flex flex-col justify-between h-full">
+        <div className="bg-[#0f172a] rounded-3xl p-6 border border-slate-800 shadow-md flex flex-col justify-between h-full text-white">
           <div>
             {/* Header */}
             <div className="flex items-start justify-between gap-3 mb-5">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-2xl bg-emerald-50 border border-emerald-200/70 flex items-center justify-center text-emerald-600 shadow-xs">
+                <div className="w-10 h-10 rounded-2xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shadow-xs">
                   <BarChart2 className="w-5 h-5" />
                 </div>
                 <div>
-                  <h2 className="text-lg font-bold text-slate-900 tracking-tight">Gráfico de Produtos Mais Vendidos</h2>
-                  <p className="text-xs text-slate-500">Peças e componentes com maior saída em bancada</p>
+                  <h2 className="text-lg font-bold text-white tracking-tight">Gráfico de Produtos Mais Vendidos</h2>
+                  <p className="text-xs text-slate-400">Peças e componentes com maior saída em bancada</p>
                 </div>
               </div>
 
               {/* Toggle Pills: Unidades / Receita */}
-              <div className="flex items-center bg-slate-100 p-1 rounded-2xl border border-slate-200/70 shrink-0">
+              <div className="flex items-center bg-[#080d19] p-1 rounded-2xl border border-slate-800 shrink-0">
                 <button
                   onClick={() => setProdutoTab('unidades')}
                   className={`px-3 py-1 text-xs rounded-xl font-bold transition-all cursor-pointer ${
                     produtoTab === 'unidades'
-                      ? 'bg-white text-indigo-600 shadow-xs'
-                      : 'text-slate-600 hover:text-slate-900'
+                      ? 'bg-indigo-600 text-white shadow-xs'
+                      : 'text-slate-400 hover:text-white'
                   }`}
                 >
                   Unidades (Qtd)
@@ -644,8 +647,8 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                   onClick={() => setProdutoTab('receita')}
                   className={`px-3 py-1 text-xs rounded-xl font-bold transition-all cursor-pointer ${
                     produtoTab === 'receita'
-                      ? 'bg-white text-indigo-600 shadow-xs'
-                      : 'text-slate-600 hover:text-slate-900'
+                      ? 'bg-indigo-600 text-white shadow-xs'
+                      : 'text-slate-400 hover:text-white'
                   }`}
                 >
                   Receita (R$)
@@ -657,27 +660,27 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             <div 
               onClick={onNavigateToEstoque}
               title="Clique para gerenciar este item no estoque"
-              className="bg-emerald-50/50 hover:bg-emerald-50/90 rounded-2xl p-4 border border-emerald-200/80 mb-5 flex items-center justify-between gap-3 transition-all cursor-pointer group"
+              className="bg-emerald-950/30 hover:bg-emerald-950/50 rounded-2xl p-4 border border-emerald-800/50 mb-5 flex items-center justify-between gap-3 transition-all cursor-pointer group"
             >
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center shadow-xs shrink-0">
                   <Package className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-[11px] font-black uppercase tracking-wider text-emerald-700 block">
+                  <span className="text-[11px] font-black uppercase tracking-wider text-emerald-400 block">
                     PRODUTO CAMPEÃO DE SAÍDAS
                   </span>
-                  <h3 className="text-sm sm:text-base font-extrabold text-slate-900 group-hover:text-emerald-800 transition-colors leading-snug">
+                  <h3 className="text-sm sm:text-base font-extrabold text-white group-hover:text-emerald-300 transition-colors leading-snug">
                     {metrics?.produtoCampeao?.nome || 'SSD Enterprise NVMe 1TB Kingston Server Grade'}
                   </h3>
                 </div>
               </div>
 
               <div className="text-right shrink-0">
-                <span className="text-sm font-extrabold text-emerald-700 block">
+                <span className="text-sm font-extrabold text-emerald-400 block">
                   {metrics?.produtoCampeao?.unidades ?? 3} un vendidas
                 </span>
-                <span className="text-xs text-slate-500 font-medium">
+                <span className="text-xs text-slate-400 font-medium">
                   Total: {formatCurrency(metrics?.produtoCampeao?.receitaTotal ?? 1260)}
                 </span>
               </div>
@@ -694,20 +697,20 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                     key={prod.pos}
                     onClick={onNavigateToEstoque}
                     title={`Ver detalhes do item: ${prod.nome}`}
-                    className="space-y-1 cursor-pointer hover:bg-slate-50 p-1 rounded-xl transition-all"
+                    className="space-y-1 cursor-pointer hover:bg-slate-800/60 p-1.5 rounded-xl transition-all"
                   >
-                    <div className="flex items-center justify-between text-xs font-semibold text-slate-900">
+                    <div className="flex items-center justify-between text-xs font-semibold text-slate-200">
                       <div className="flex items-center gap-2">
-                        <span className="w-4 h-4 rounded-full bg-slate-100 text-slate-700 font-bold text-[10px] flex items-center justify-center shrink-0">
+                        <span className="w-4 h-4 rounded-full bg-slate-800 text-emerald-300 border border-slate-700 font-bold text-[10px] flex items-center justify-center shrink-0">
                           {prod.pos}
                         </span>
-                        <span className="truncate max-w-[280px] sm:max-w-[340px]">{prod.nome}</span>
+                        <span className="truncate max-w-[280px] sm:max-w-[340px] text-slate-200">{prod.nome}</span>
                       </div>
-                      <span className="font-black text-slate-900 shrink-0">
+                      <span className="font-black text-white shrink-0">
                         {produtoTab === 'unidades' ? `${prod.unidades} un` : formatCurrency(prod.receita)}
                       </span>
                     </div>
-                    <div className="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
+                    <div className="w-full h-2.5 bg-slate-800 rounded-full overflow-hidden">
                       <div 
                         className="h-full rounded-full transition-all duration-500" 
                         style={{ width: `${widthPercent}%`, backgroundColor: prod.corBarra }}
@@ -724,11 +727,11 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           </div>
 
           {/* Footer Card */}
-          <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs">
-            <span className="text-slate-500 font-medium">
+          <div className="pt-4 border-t border-slate-800 flex items-center justify-between text-xs">
+            <span className="text-slate-400 font-medium">
               Total de itens faturados: {metrics?.totalItensFaturados ?? 11} peças
             </span>
-            <span className="text-emerald-700 font-bold">
+            <span className="text-emerald-400 font-bold">
               Receita peças: {formatCurrency(metrics?.receitaPecasTotal ?? 3655)}
             </span>
           </div>
@@ -741,14 +744,14 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
         
         {/* CARD ESQUERDA: DISTRIBUIÇÃO POR STATUS (1 coluna) */}
-        <div className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-xs flex flex-col justify-between h-full">
+        <div className="bg-[#0f172a] rounded-3xl p-6 border border-slate-800 shadow-md flex flex-col justify-between h-full text-white">
           <div>
             {/* Header */}
             <div className="flex items-center justify-between mb-5">
-              <h2 className="text-lg font-bold text-slate-900 tracking-tight">Distribuição por Status</h2>
+              <h2 className="text-lg font-bold text-white tracking-tight">Distribuição por Status</h2>
               <button
                 onClick={onNavigateToKanban}
-                className="text-xs font-semibold text-indigo-600 hover:text-indigo-800 transition-colors flex items-center gap-1 cursor-pointer"
+                className="text-xs font-semibold text-indigo-400 hover:text-indigo-300 transition-colors flex items-center gap-1 cursor-pointer"
               >
                 <span>Ver Kanban</span>
                 <ChevronRight className="w-3.5 h-3.5" />
@@ -767,16 +770,16 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                   key={st.status} 
                   onClick={onNavigateToKanban}
                   title={`Filtrar status: ${st.label}`}
-                  className="space-y-1.5 cursor-pointer hover:bg-slate-50 p-1 rounded-xl transition-all"
+                  className="space-y-1.5 cursor-pointer hover:bg-slate-800/40 p-1 rounded-xl transition-all"
                 >
                   <div className="flex items-center justify-between text-xs">
                     <div className="flex items-center gap-2">
                       <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: st.color }}></span>
-                      <span className="font-semibold text-slate-700">{st.label}</span>
+                      <span className="font-semibold text-slate-300">{st.label}</span>
                     </div>
-                    <span className="font-bold text-slate-900">{st.count} OS ({st.percent}%)</span>
+                    <span className="font-bold text-white">{st.count} OS ({st.percent}%)</span>
                   </div>
-                  <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+                  <div className="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
                     <div 
                       className="h-full rounded-full transition-all duration-500" 
                       style={{ width: `${st.percent}%`, backgroundColor: st.color }}
@@ -789,20 +792,20 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
 
           {/* Bottom 2 metric boxes */}
           <div className="grid grid-cols-2 gap-3 pt-3">
-            <div className="bg-slate-50 rounded-2xl p-4 text-center border border-slate-100">
-              <span className="text-[11px] font-medium text-slate-500 block mb-1">
+            <div className="bg-[#131d33] rounded-2xl p-4 text-center border border-slate-750">
+              <span className="text-[11px] font-medium text-slate-400 block mb-1">
                 Taxa de Sucesso
               </span>
-              <span className="text-xl font-black text-slate-900">
+              <span className="text-xl font-black text-white">
                 {metrics?.taxaSucesso ?? 42.9}%
               </span>
             </div>
 
-            <div className="bg-slate-50 rounded-2xl p-4 text-center border border-slate-100">
-              <span className="text-[11px] font-medium text-slate-500 block mb-1">
+            <div className="bg-[#131d33] rounded-2xl p-4 text-center border border-slate-750">
+              <span className="text-[11px] font-medium text-slate-400 block mb-1">
                 Orçamentos
               </span>
-              <span className="text-xl font-black text-amber-500">
+              <span className="text-xl font-black text-amber-400">
                 {metrics?.orcamentos ?? 1}
               </span>
             </div>
@@ -810,16 +813,16 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         </div>
 
         {/* CARD DIREITA: ÚLTIMAS ORDENS DE SERVIÇO (2 colunas) */}
-        <div className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-xs lg:col-span-2">
+        <div className="bg-[#0f172a] rounded-3xl p-6 border border-slate-800 shadow-md lg:col-span-2 text-white">
           {/* Header */}
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h2 className="text-lg font-bold text-slate-900 tracking-tight">Últimas Ordens de Serviço</h2>
-              <p className="text-xs text-slate-500">Últimos atendimentos cadastrados no sistema</p>
+              <h2 className="text-lg font-bold text-white tracking-tight">Últimas Ordens de Serviço</h2>
+              <p className="text-xs text-slate-400">Últimos atendimentos cadastrados no sistema</p>
             </div>
             <button
               onClick={onNavigateToOrdens}
-              className="text-xs font-semibold text-indigo-600 hover:text-indigo-800 transition-colors flex items-center gap-1 cursor-pointer"
+              className="text-xs font-semibold text-indigo-400 hover:text-indigo-300 transition-colors flex items-center gap-1 cursor-pointer"
             >
               <span>Ver Tabela Completa</span>
               <ChevronRight className="w-3.5 h-3.5" />
@@ -827,7 +830,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           </div>
 
           {/* List of Orders */}
-          <div className="divide-y divide-slate-100">
+          <div className="divide-y divide-slate-800">
             {displayedOrdens.map((os) => {
               const getStatusBadge = (status: string) => {
                 switch (status) {
@@ -852,36 +855,36 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 <div
                   key={os.id}
                   onClick={() => onSelectOS(os)}
-                  className="py-3.5 first:pt-2 last:pb-1 flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:bg-slate-50/70 p-2 rounded-2xl transition-colors cursor-pointer group"
+                  className="py-3.5 first:pt-2 last:pb-1 flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:bg-slate-850/80 p-2 rounded-2xl transition-colors cursor-pointer group"
                 >
                   {/* Left: Tag + Details */}
                   <div className="flex items-start gap-3 min-w-0">
-                    <div className="w-8 h-8 rounded-xl bg-indigo-50 text-indigo-600 font-extrabold text-xs flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                    <div className="w-8 h-8 rounded-xl bg-indigo-500/20 text-indigo-400 font-extrabold text-xs flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-indigo-600 group-hover:text-white transition-colors border border-indigo-500/30">
                       {orderIndexNumber}
                     </div>
 
                     <div className="min-w-0">
                       {/* Meta line */}
                       <div className="flex items-center gap-2 flex-wrap mb-0.5">
-                        <span className="font-mono text-xs font-bold text-slate-900">{os.numeroOS}</span>
+                        <span className="font-mono text-xs font-bold text-white">{os.numeroOS}</span>
                         <span className={`text-[10px] font-extrabold px-2 py-0.5 rounded-full ${badge.bg} ${badge.text}`}>
                           {badge.label}
                         </span>
                         {os.tecnico && (
-                          <span className="text-xs text-slate-500 font-medium">
-                            Técnico: <strong className="text-slate-700">{os.tecnico.nome}</strong>
+                          <span className="text-xs text-slate-400 font-medium">
+                            Técnico: <strong className="text-slate-200">{os.tecnico.nome}</strong>
                           </span>
                         )}
                       </div>
 
                       {/* Equipment */}
-                      <h4 className="font-bold text-slate-900 group-hover:text-indigo-600 transition-colors text-sm truncate max-w-[340px] sm:max-w-[420px]">
+                      <h4 className="font-bold text-white group-hover:text-indigo-400 transition-colors text-sm truncate max-w-[340px] sm:max-w-[420px]">
                         {os.equipamento.tipo} {os.equipamento.marca} {os.equipamento.modelo}
                       </h4>
 
                       {/* Client and date */}
-                      <p className="text-xs text-slate-500 mt-0.5">
-                        Cliente: <strong className="text-slate-700">{os.cliente?.nome || 'Cliente'}</strong> • {new Date(os.dataAbertura).toLocaleDateString('pt-BR')}
+                      <p className="text-xs text-slate-400 mt-0.5">
+                        Cliente: <strong className="text-slate-200">{os.cliente?.nome || 'Cliente'}</strong> • {new Date(os.dataAbertura).toLocaleDateString('pt-BR')}
                       </p>
                     </div>
                   </div>
@@ -889,13 +892,13 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                   {/* Right: Value + Action Buttons */}
                   <div 
                     onClick={(e) => e.stopPropagation()}
-                    className="flex items-center justify-between sm:justify-end gap-3 shrink-0 pt-2 sm:pt-0 border-t sm:border-0 border-slate-100"
+                    className="flex items-center justify-between sm:justify-end gap-3 shrink-0 pt-2 sm:pt-0 border-t sm:border-0 border-slate-800"
                   >
                     <div className="text-left sm:text-right">
                       <span className="text-[10px] text-slate-400 font-bold block uppercase tracking-wider">
                         Valor Total
                       </span>
-                      <span className="text-sm font-black text-slate-900">
+                      <span className="text-sm font-black text-white">
                         {formatCurrency(os.valorTotal)}
                       </span>
                     </div>
@@ -904,7 +907,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                       <button
                         onClick={() => onSelectOS(os)}
                         title="Editar Ordem de Serviço"
-                        className="flex items-center gap-1 px-2.5 py-1.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-indigo-600 text-xs font-bold transition-all shadow-2xs cursor-pointer"
+                        className="flex items-center gap-1 px-2.5 py-1.5 rounded-xl border border-slate-700 bg-slate-800/90 hover:bg-slate-700 text-indigo-400 hover:text-white text-xs font-bold transition-all shadow-2xs cursor-pointer"
                       >
                         <Edit2 className="w-3.5 h-3.5" />
                         <span>Editar</span>
@@ -914,7 +917,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                         <button
                           onClick={() => onPrintOS(os)}
                           title="Imprimir Comprovante da OS"
-                          className="p-1.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-500 hover:text-slate-800 transition-colors shadow-2xs cursor-pointer"
+                          className="p-1.5 rounded-xl border border-slate-700 bg-slate-800/90 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors shadow-2xs cursor-pointer"
                         >
                           <Printer className="w-3.5 h-3.5" />
                         </button>
@@ -931,16 +934,16 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       {/* ============================================================== */}
       {/* 6. FOOTER INFERIOR (CONFORME O LAYOUT OFICIAL)                  */}
       {/* ============================================================== */}
-      <footer className="pt-6 pb-4 border-t border-slate-200 text-xs text-slate-500 flex flex-col md:flex-row items-center justify-between gap-3">
+      <footer className="pt-6 pb-4 border-t border-slate-800 text-xs text-slate-400 flex flex-col md:flex-row items-center justify-between gap-3">
         <div>
           OS Master © 2026 - Sistema de Gestão de Ordens de Serviço & Assistência Técnica.
         </div>
 
-        <div className="flex items-center gap-2 flex-wrap">
+        <div className="flex items-center gap-2 flex-wrap text-slate-400">
           <button
             onClick={onNavigateToEstoque}
             title="Ver catálogo de estoque"
-            className="hover:text-indigo-600 transition-colors font-medium cursor-pointer"
+            className="hover:text-indigo-400 transition-colors font-medium cursor-pointer"
           >
             Estoque (12 itens)
           </button>
@@ -948,7 +951,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           <button
             onClick={() => setShowTerminalModal(true)}
             title="Abrir guia de comandos de desenvolvimento"
-            className="text-indigo-600 hover:text-indigo-800 font-bold hover:underline transition-colors flex items-center gap-1 cursor-pointer"
+            className="text-indigo-400 hover:text-indigo-300 font-bold hover:underline transition-colors flex items-center gap-1 cursor-pointer"
           >
             <Terminal className="w-3.5 h-3.5" />
             <span>Comandos do Terminal & MySQL</span>
@@ -957,7 +960,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           <button
             onClick={onNavigateToClientes}
             title="Ver lista de clientes"
-            className="hover:text-indigo-600 transition-colors font-medium cursor-pointer"
+            className="hover:text-indigo-400 transition-colors font-medium cursor-pointer"
           >
             Clientes (5)
           </button>
@@ -965,7 +968,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           <button
             onClick={onNavigateToTecnicos}
             title="Ver quadro de técnicos"
-            className="hover:text-indigo-600 transition-colors font-medium cursor-pointer"
+            className="hover:text-indigo-400 transition-colors font-medium cursor-pointer"
           >
             Técnicos (4)
           </button>

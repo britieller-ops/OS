@@ -127,14 +127,14 @@ export const EstoqueView: React.FC<EstoqueViewProps> = ({
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-extrabold text-slate-900 tracking-tight">Estoque & Peças</h1>
-          <p className="text-sm text-slate-500">
+          <h1 className="text-2xl font-extrabold text-white tracking-tight">Estoque & Peças</h1>
+          <p className="text-sm text-slate-400">
             Controle de componentes, insumos técnicos, alertas de reposição e precificação.
           </p>
         </div>
         <button
           onClick={openCreateModal}
-          className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold px-4 py-2.5 rounded-xl shadow-sm transition-all"
+          className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold px-4 py-2.5 rounded-xl shadow-md shadow-indigo-600/30 transition-all cursor-pointer"
         >
           <Plus className="w-4 h-4" />
           <span>Cadastrar Nova Peça</span>
@@ -143,51 +143,51 @@ export const EstoqueView: React.FC<EstoqueViewProps> = ({
 
       {/* KPI Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between">
+        <div className="bg-[#0f172a] p-5 rounded-2xl border border-slate-800 shadow-md flex items-center justify-between text-white">
           <div>
-            <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">Total de Itens Cadastrados</p>
-            <h3 className="text-3xl font-extrabold text-slate-900 mt-1">{estoque.length}</h3>
+            <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">Total de Itens Cadastrados</p>
+            <h3 className="text-3xl font-extrabold text-white mt-1">{estoque.length}</h3>
             <p className="text-xs text-slate-400 mt-1">Peças e insumos</p>
           </div>
-          <div className="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center">
+          <div className="w-12 h-12 rounded-2xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center border border-indigo-500/30">
             <Package className="w-6 h-6" />
           </div>
         </div>
 
-        <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between">
+        <div className="bg-[#0f172a] p-5 rounded-2xl border border-slate-800 shadow-md flex items-center justify-between text-white">
           <div>
-            <p className="text-xs font-bold text-emerald-600 uppercase tracking-wider">Patrimônio em Estoque (Venda)</p>
-            <h3 className="text-2xl font-extrabold text-emerald-600 mt-1">{formatCurrency(valorTotalVenda)}</h3>
+            <p className="text-xs font-bold text-emerald-400 uppercase tracking-wider">Patrimônio em Estoque (Venda)</p>
+            <h3 className="text-2xl font-extrabold text-emerald-400 mt-1">{formatCurrency(valorTotalVenda)}</h3>
             <p className="text-xs text-slate-400 mt-1">Custo: {formatCurrency(valorTotalCusto)}</p>
           </div>
-          <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
+          <div className="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center border border-emerald-500/30">
             <TrendingUp className="w-6 h-6" />
           </div>
         </div>
 
-        <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center justify-between">
+        <div className="bg-[#0f172a] p-5 rounded-2xl border border-slate-800 shadow-md flex items-center justify-between text-white">
           <div>
-            <p className="text-xs font-bold text-amber-600 uppercase tracking-wider">Estoque em Nível Crítico</p>
-            <h3 className="text-3xl font-extrabold text-amber-600 mt-1">{itensEstoqueBaixo.length}</h3>
+            <p className="text-xs font-bold text-amber-400 uppercase tracking-wider">Estoque em Nível Crítico</p>
+            <h3 className="text-3xl font-extrabold text-amber-400 mt-1">{itensEstoqueBaixo.length}</h3>
             <p className="text-xs text-slate-400 mt-1">Abaixo do limite de segurança</p>
           </div>
-          <div className="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center">
+          <div className="w-12 h-12 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center border border-amber-500/30">
             <AlertTriangle className="w-6 h-6" />
           </div>
         </div>
       </div>
 
       {/* Filter and Search */}
-      <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-3">
+      <div className="bg-[#0f172a] p-4 rounded-2xl border border-slate-800 shadow-md flex flex-col md:flex-row md:items-center justify-between gap-3 text-white">
         <div className="flex items-center gap-2 overflow-x-auto pb-1 md:pb-0">
           {categorias.map((cat) => (
             <button
               key={cat}
               onClick={() => setSelectedCategoria(cat)}
-              className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-colors ${
+              className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-colors cursor-pointer ${
                 selectedCategoria === cat
                   ? 'bg-indigo-600 text-white shadow-sm'
-                  : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                  : 'bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white'
               }`}
             >
               {cat}
@@ -202,16 +202,16 @@ export const EstoqueView: React.FC<EstoqueViewProps> = ({
             placeholder="Buscar por código ou descrição..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-9 pr-3 py-1.5 text-xs bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-1 focus:ring-indigo-500"
+            className="w-full pl-9 pr-3 py-1.5 text-xs bg-slate-800 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:bg-slate-750 focus:outline-none focus:ring-1 focus:ring-indigo-500"
           />
         </div>
       </div>
 
       {/* Estoque Table */}
-      <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+      <div className="bg-[#0f172a] rounded-2xl border border-slate-800 shadow-md overflow-hidden text-white">
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-sm text-slate-600">
-            <thead className="bg-slate-50 text-[11px] uppercase font-bold text-slate-500 border-b border-slate-200">
+          <table className="w-full text-left text-sm text-slate-300">
+            <thead className="bg-[#0d1424] text-[11px] uppercase font-bold text-slate-400 border-b border-slate-800">
               <tr>
                 <th className="py-3 px-4">Código SKU</th>
                 <th className="py-3 px-4">Descrição da Peça</th>
@@ -224,7 +224,7 @@ export const EstoqueView: React.FC<EstoqueViewProps> = ({
                 <th className="py-3 px-4 text-center">Ações</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100">
+            <tbody className="divide-y divide-slate-800">
               {filteredEstoque.length === 0 ? (
                 <tr>
                   <td colSpan={9} className="py-12 text-center text-slate-400 text-sm">
@@ -237,15 +237,15 @@ export const EstoqueView: React.FC<EstoqueViewProps> = ({
                   const margem = p.precoCusto > 0 ? (((p.precoVenda - p.precoCusto) / p.precoCusto) * 100).toFixed(0) : 100;
 
                   return (
-                    <tr key={p.id} className="hover:bg-slate-50/70 transition-colors">
-                      <td className="py-3.5 px-4 font-mono font-bold text-slate-900 text-xs">
+                    <tr key={p.id} className="hover:bg-slate-850/80 transition-colors text-slate-200">
+                      <td className="py-3.5 px-4 font-mono font-bold text-indigo-400 text-xs">
                         {p.codigo}
                       </td>
-                      <td className="py-3.5 px-4 font-medium text-slate-900 text-xs">
+                      <td className="py-3.5 px-4 font-medium text-white text-xs">
                         {p.nome}
                       </td>
                       <td className="py-3.5 px-4 text-xs">
-                        <span className="px-2 py-0.5 rounded-md bg-slate-100 text-slate-700 font-semibold text-[11px]">
+                        <span className="px-2 py-0.5 rounded-md bg-slate-800 text-slate-300 border border-slate-700 font-semibold text-[11px]">
                           {p.categoria}
                         </span>
                       </td>
@@ -254,15 +254,15 @@ export const EstoqueView: React.FC<EstoqueViewProps> = ({
                           <span
                             className={`font-black text-xs px-2.5 py-0.5 rounded-full ${
                               isLow
-                                ? 'bg-amber-100 text-amber-800 border border-amber-300'
-                                : 'bg-emerald-100 text-emerald-800'
+                                ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
+                                : 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30'
                             }`}
                           >
                             {p.quantidade} {p.unidade}
                           </span>
                           {isLow && (
                             <span title={`Mínimo: ${p.quantidadeMinima}`}>
-                              <AlertTriangle className="w-3.5 h-3.5 text-amber-600 animate-pulse" />
+                              <AlertTriangle className="w-3.5 h-3.5 text-amber-400 animate-pulse" />
                             </span>
                           )}
                         </div>
